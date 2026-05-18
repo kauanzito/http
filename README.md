@@ -20,20 +20,33 @@ Um protocolo de comunicação é um **conjunto de regras e padrões** que define
 - **Tratamento de erros**: Como lidar com problemas de comunicação
 - **Interpretação de dados**: Como interpretar o conteúdo transmitido
 
+```
 ### Modelo Cliente-Servidor Explicado
 
 ```
-┌────────────────┐                    ┌────────────────┐
-│    CLIENTE     │                    │    SERVIDOR    │
-│  (Navegador)   │                    │   (Web Server) │
-├────────────────┤                    ├────────────────┤
-│                │  1. REQUISIÇÃO     │                │
-│   Requisita    │ ──────────────────>│ Recebe         │
-│   Recurso      │                    │ Processa       │
-│                │  2. RESPOSTA       │                │
-│   Recebe       │<───────────────────│  Retorna       │
-│   Resposta     │                    │  Dados         │
-└────────────────┘                    └────────────────┘
+┌──────────────────────┐              ┌──────────────────────┐
+│      CLIENTE         │              │      SERVIDOR        │
+│    (Navegador)       │              │    (Web Server)      │
+├──────────────────────┤              ├──────────────────────┤
+│                      │              │                      │
+│   Requisita Recurso  │              │                      │
+│                      │              │                      │
+│         ↓            │              │         ↑            │
+│  ┌────────────────┐  │              │  ┌────────────────┐  │
+│  │ 1. REQUISIÇÃO  │  │              │  │  Recebe        │  │
+│  │    HTTP GET    │  │──────────→───→─→│  Processa      │  │
+│  │  /pagina.html  │  │              │  │  Lógica        │  │
+│  └────────────────┘  │              │  └────────────────┘  │
+│         ↑            │              │         ↓            │
+│         │            │              │         │            │
+│  ┌────────────────┐  │              │  ┌────────────────┐  │
+│  │ 2. RESPOSTA    │  │              │  │  Retorna       │  │
+│  │   HTTP 200 OK  │  │←──────────────←─│  HTML/Dados    │  │
+│  │  + Conteúdo    │  │              │  │  + Status Code │  │
+│  └────────────────┘  │              │  └────────────────┘  │
+│                      │              │                      │
+└──────────────────────┘              └──────────────────────┘
+```
 ```
 
 ---
