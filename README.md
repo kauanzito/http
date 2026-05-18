@@ -489,4 +489,3 @@ Compreender HTTP é essencial para qualquer pessoa que trabalhe com tecnologia w
 ---
 
 **Última atualização**: 18 de maio de 2026
-```
